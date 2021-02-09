@@ -1,5 +1,28 @@
-
-body{
-background-color: FF5688;
+body {
+background-color: #FEC1C1;
 }
 
+h1 {
+color: white;
+font: small-caps 40px cursive;
+}
+
+h2{
+color: white;
+font: 24px cursive;
+}
+
+p {
+background-color: #FFDEDe;
+color: #5B3000;
+font: 16px system-ui;
+}
+
+ul {
+background-color: #FFDEDe;
+color: #5B3000;
+font: 16px system-ui;}
+
+img {
+width: 300px;
+}
