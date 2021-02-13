@@ -1,3 +1,7 @@
+* {
+margin: 5px;
+}
+
 body {
 background-color: #FEC1C1;
 }
@@ -10,12 +14,15 @@ font: small-caps 40px cursive;
 h2 {
 color: white;
 font: 24px cursive;
+display: flex;
 }
 
 p {
 background-color: #FFDEDe;
 color: #5B3000;
 font: 16px system-ui;
+display: inline;
+padding: 5px
 }
 
 ul {
@@ -24,5 +31,13 @@ color: #5B3000;
 font: 16px system-ui;}
 
 img {
-width: 300px;
+height: 500px;
+}
+
+.maininfo {
+display: flex;
+}
+
+.charactermenu {
+padding-left: 40px;
 }
