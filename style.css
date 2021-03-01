@@ -11,10 +11,21 @@ color: white;
 font: small-caps 40px cursive;
 }
 
-h2 {
-color: white;
-font: 24px cursive;
+nav {
 display: flex;
+background-color: #FFDEDe;
+}
+
+nav a {
+color: #5B3000;
+text-aligh:center;
+padding: 8px;
+font: 24px cursive;
+text-decoration: none;
+}
+
+nav a.active {
+background-color: #ffffff;
 }
 
 p {
@@ -22,13 +33,9 @@ background-color: #FFDEDe;
 color: #5B3000;
 font: 16px system-ui;
 display: inline;
-padding: 5px
+padding: 10px
 }
 
-ul {
-background-color: #FFDEDe;
-color: #5B3000;
-font: 16px system-ui;}
 
 img {
 height: 500px;
@@ -36,8 +43,4 @@ height: 500px;
 
 .maininfo {
 display: flex;
-}
-
-.charactermenu {
-padding-left: 40px;
 }
