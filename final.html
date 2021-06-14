@@ -1,0 +1,44 @@
+<html lang="en">
+<br>
+
+<head>
+	<title> Hangman </title>
+	<link href="finalstyle.css" rel="stylesheet"> </head>
+<br>
+
+<body>
+	<h1> Hangman </h1>
+	<h4>A project by Emily Ortiz [PD5], Tanzina Sumona [PD5], and Anna Fang [PD5] </h4>
+	<br>
+	<li><a href="https://annafang30.github.io/web/finalpage2.html"> link to our Hangman DATA + GRAPHS  for analysis :)</a></li>
+	<br>
+	<h2> Project Description </h2>
+	<p> This is a recreation of the game Hangman, where players are given an unknown word and guess the letters that make it up, in Python. Players will have 9 lives to guess the letters in a random word or phrase through inputs in Thonny’s shell. Every wrong guess is followed by a hangman drawing and graphs will be shown when the player ends the game. </p>
+	<br>
+	<h2> Instructions </h2>
+	<p> Go onto the Game File and press “Run Current Script”. This will run the game and remind you of important instructions. Then, press the enter key. Input a guess in CAPITAL letters when the program prompts you to guess and press enter. You will have 9 chances/”lives” and a hangman drawing will print every time you guess incorrectly. A list of words that you have already guessed will be shown after each guess you make. If you think you know the word, input your guess (in capital letters) when the game prompts you to guess a letter. If you would like to end the game early, input “END GAME” when the game prompts you to guess another letter. You will also be asked whether or not you want to stop playing when you have finished the round of Hangman; you can respond with either “YES” or “NO”. If you end the game, two graphs will show up with data from your gameplay. Good luck! </p>
+	<br>
+	<h2> How it works </h2>
+	<h3> How the game works </h3>
+	<p> The full string of words and phrases you play with in the game is saved in a .txt file with the capitalized words/phrases separated with commas. Once the player has downloaded all of the game/visual files required to play Hangman and pressed “Run”, a python program prints a list of instructions and reads the file. The words/phrases in the txt file are then split (commas used as the separator) and one is randomly picked; the word/phrase is then removed from the list containing the rest of the words/phrases and each unique capital letter in the selected word/phrase is appended into a new list for unguessed letters. Next, the program outputs underscores using this new list, the visual (imported from the visual file as a dictionary) with the information/drawing whose key corresponds to the number of lives the player has left, and a string with a message indicating how many lives the player has left. The program sets lives to 9 and contains a list of valid letter guesses that the player can enter (capital alphabet letters) The program then asks the player for a guess using the input() function. Using a while loop, while there are words still unguessed and the player’s lives are more than 0, if the input is “END GAME”, a message will be printed revealing what the word/phrase was, running the functions that print two graphs, and breaking the loop. If the input is the guess of the word itself, the program will check if the guess equals the word/phrase; if the guess is right, a congratulatory string is printed and the player will be prompted whether or not they will want to play again through an input() function. If the input is a letter (length = 1), the program will check if it is wrong, right, or not capitalized via if and elif statements. If the letter guess is not present in the list of valid capital letters or if a space (‘ ‘) is entered, the input() function runs again, prompting the player to guess again. If the word is not in the word/phrase, the guessed letter is appended into a list for wrong guesses and joined into one string using the .join() function. This string is then printed with a message telling the player what letters they have guessed incorrectly so far. The program will then subtract one life from the lives the player has left, printing a corresponding message and Hangman visual alongside it, and running the input() function again to prompt the player to guess again. If the word guess is in the word/phrase, the guessed letter is removed from the list containing all the unique letters in the word/phrase and appended to a new list for used letters. A new set of underscores will be printed using the updated list for unguessed letters, letters that have been correctly guessed, and the message for the incorrectly guessed words + the string containing them are once again printed. These functions will loop until lives reaches zero, the player decides to end the game, or the word is correctly guessed; at that point, a string informing the player what the word is will be printed. At the end of the game, the program will ask the player if they would like to continue playing or not through an input() function. If the player inputs yes, the program will run again. If the player inputs “NO”, the program stops and the functions for the two graphs are run. If anything other than “YES” or “NO” is inputted by the player, the same input() function will repeat. </p>
+	<h3> How the graphs work </h3>
+	<p> While the function for the gameplay runs, 3 empty lists are created for the graphs and two count statements (wincount and losecount) are set to 0. Every time a game is won, wincount increases by one and appended into the empty list for won games. The same is done for lost games. These two lists are fed into a function that generates a bar graph called “Win Lose ratios!” with the y axis labeled as “# of Games”; This function takes in two labels as the “X” and the length of each list as the “Y” and shows the player how many games they have lost or won. If the player loses a game by using up all of their guesses, a “9” will be appended into the empty list for the number of wrong guesses. If the player wins the game, the number of lives they have remaining will be subtracted from 9 and appended into the same empty list. This list will then be sorted into sublists through appending each number into its corresponding sublist via if and elif statements. These sublists are then run through another function using labels as the “X” and the lengths of each sublist as the “Y”, printing a bar graph called “Wrong guesses” with corresponding X,Y labels that tell the player how many wrong guesses they made (in a single game) and in how many games they used that number of attemps. </p>
+	<br>
+	<h2> Files </h2>
+	<ul>
+		<li> hangman_final.py: Python program that runs the Hangman game. Responsible for reading/calling the wordsandphrases.txt text file and the hangman_visual dictionary file, and taking inputs from the player. </li>
+		<li> hangman_visual.py: Dictionary containing the visuals for the hangman drawings printed after every wrong guess.</li>
+		<li> wordsandphrases.txt: text file containing all the words and phrases used in the game </li>
+		<li> final.html: This HTML file containing the main landing page for the website with info.</li>
+		<li> finalpage2.html: HTML page containing example graphs and data analysis</li>
+		<li> finalstyle.css: CSS file styling the website.</li>
+	</ul>
+	<br>
+	<h2> Resources </h2>
+	<li> https://www.youtube.com/watch?v=cJJTnI22IF8 : really helped us grasp the concept of the game (what we needed to do) and helped us figure out why our program wasn't working when we ran into bugs. </li>
+	<br>
+	<h2> Bugs and things to notice </h2>
+	<li> When promoted to play again at the end of the round, if you just press enter without inputting "YES" or "NO", the game will stop running. If you want to play again, you must press run again. </li>
+</body>
+
+</html>
